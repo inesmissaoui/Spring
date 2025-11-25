@@ -5,6 +5,6 @@ WORKDIR /app
 # Copie du fichier JAR construit par Maven
 COPY target/*.jar app.jar
 # Exposer le port (8080 pour Spring Boot)
-EXPOSE 8080
+EXPOSE 9090
 # Commande de démarrage
 ENTRYPOINT ["'java", "-jar", "app.jar"]
