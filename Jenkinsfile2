@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+        jdk 'JDK17'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building project..."
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying application..."
+                // Ici tu peux ajouter tes commandes de déploiement
+            }
+        }
+    }
+}
